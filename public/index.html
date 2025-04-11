@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chatter-Box</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f4f4; padding: 2em; }
+    #messages { list-style: none; padding: 0; }
+    #messages li { padding: 5px 10px; margin-bottom: 10px; background: #fff; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h2>🧠 Chatter-Box</h2>
+  <ul id="messages"></ul>
+  <form id="form">
+    <input id="input" autocomplete="off" /><button>Send</button>
+  </form>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
