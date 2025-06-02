@@ -1,5 +1,13 @@
 const socket = io();
 
+
+let username = '';
+
+while (!username) {
+  username = prompt("Enter your name:");
+}
+
+socket.emit('new-user', username);
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 const messages = document.getElementById('messages');
