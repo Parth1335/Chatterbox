@@ -1,11 +1,11 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const http = require('http').createServer(app);
-const io = require('socket.io')(http);
+const http = require("http").createServer(app);
+const io = require("socket.io")(http);
 const users = {};
 const PORT = process.env.PORT || 3001;
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 io.on("connection", (socket) => {
   socket.on("new-user", (username) => {
@@ -16,6 +16,14 @@ io.on("connection", (socket) => {
   socket.on("chat message", (msg) => {
     const name = users[socket.id] || "Unknown";
     io.emit("chat message", `${name}: ${msg}`);
+  });
+
+  socket.on("typing", (username) => {
+    socket.broadcast.emit("typing", username);
+  });
+
+  socket.on("stop-typing", (username) => {
+    socket.broadcast.emit("stop-typing", username);
   });
 
   socket.on("disconnect", () => {

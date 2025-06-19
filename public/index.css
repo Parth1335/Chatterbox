@@ -1,0 +1,36 @@
+body {
+  font-family: sans-serif;
+  background-color: blanchedalmond;
+  padding: 2em;
+}
+
+#messages {
+  list-style: none;
+  padding: 0;
+}
+
+#messages li {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+#input {
+  margin-top: 10px;
+  border-style: double;
+}
+
+#HM {
+  visibility: hidden;
+}
+
+#disconnect {
+  margin-left: 169px;
+  margin-top: 2vh;
+  width: 7vw;
+}
+
+#send {
+  width: 7vw;
+}
